@@ -5,7 +5,7 @@ import path from "path"
 const app = express()
 
 app.post("/files", (req, res) => {
-    const Folderpath = "D:/nodetask1";
+    const Folderpath = "D:/";
     const currentDate = new Date();
     const filename = `${currentDate.toISOString().replace(/:/g, "-")}.txt`
     const filepath = path.join(Folderpath, filename)
@@ -22,7 +22,7 @@ app.post("/files", (req, res) => {
 
 
 app.get('/files', (req, res) => {
-    const folderpath = 'D:/nodetask1'; 
+    const folderpath = 'D:/'; 
 
     fs.readdir(folderpath, (err, files) => {
         if (err) {
